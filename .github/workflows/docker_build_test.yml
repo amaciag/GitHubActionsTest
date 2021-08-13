@@ -16,6 +16,10 @@ jobs:
       - name: Docker Build
         run: |
           docker build -t test_image:1.0.0 ./docker
-      - name: Docker Chceck
+      - name: Docker Push
+        run: |
+          docker push test_image:1.0.0
+      - name: Docker Check
         run: |
           echo Successfully Done!
+          
