@@ -18,7 +18,8 @@ jobs:
           docker build -t test_image:1.0.0 ./docker
       - name: Docker Push
         run: |
-          docker push test_image:1.0.0
+          docker tag test_image:1.0.0 anhmaciag/test_image:1.0.0
+          docker push anhmaciag/test_image:1.0.0
       - name: Docker Check
         run: |
           echo Successfully Done!
