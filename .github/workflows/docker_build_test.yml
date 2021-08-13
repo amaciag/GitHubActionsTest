@@ -1,0 +1,15 @@
+name: Docker Build & Push
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker Build
+        run: |
+          docker build -t test_image:1.0.0 ./docker
+      - name: Docker Chceck
+        run: |
+          echo Successfully Done!
