@@ -2,7 +2,7 @@ import argparse
 
 def print_hello(name):
     if name is None:
-	name = 'there'
+	    name = 'there'
     print("Hello {}!".format(name))
     print("How are you?")
 
