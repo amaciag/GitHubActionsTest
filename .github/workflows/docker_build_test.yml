@@ -18,8 +18,8 @@ jobs:
           docker build -t test_image:1.0.0 ./docker
       - name: Docker Push
         run: |
-          docker tag test_image:1.0.0 gcr.io/dbce-dswb-auto-11f2/test_image:1.0.0
-          docker push gcr.io/dbce-dswb-auto-11f2/test_image:1.0.0
+          docker tag test_image:1.0.0 gcr.io/dbce-dswb-sbx-e07f/test_image:1.0.0
+          docker push gcr.io/dbce-dswb-sbx-e07f/test_image:1.0.0
       - name: Docker Check
         run: |
           echo Successfully Done!
