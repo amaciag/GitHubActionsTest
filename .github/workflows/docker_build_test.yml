@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: anh-self-hosted
+    runs-on: anh-sbx-hosted
     steps:
       - uses: actions/checkout@v2
       - name: Docker Login
