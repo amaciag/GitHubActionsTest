@@ -4,7 +4,7 @@ def print_hello(name):
     if name is None:
 	    name = 'there'
     print("Hello {}!".format(name))
-    print("How are you?")
+    print("Hope you're well")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
