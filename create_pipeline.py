@@ -32,4 +32,5 @@ def test_hello(image='gcr.io/dbce-dswb-sbx-e07f/test_image:1.0.0',
 
 
 kfp.compiler.Compiler().compile(test_hello, './test_hello.yaml')
+kfp_client.create_run_from_pipeline_package('./test_hello.yaml', arguments={}, namespace='maciag-am')
 print('Pipeline Created!')
