@@ -1,5 +1,6 @@
 from google.cloud import secretmanager
 import kfp
+from kfp import dsl
 import json
 import argparse
 
@@ -17,4 +18,18 @@ kfp_client = kfp.Client(host=payload.split(',')[0],
 
 
 print('job is running')
-print(kfp_client.list_pipelines())
+
+
+@dsl.pipeline(
+    name='test-hello'
+)
+def test_hello(image='gcr.io/dbce-dswb-sbx-e07f/test_image:1.0.0',
+               name=None):
+    hello = dsl.ContainerOp(name='hello',
+                            image=image,
+                            command=['python', 'greeting.py'],
+                            arguments=['--name', name])
+
+
+kfp.compiler.Compiler().compile(test_hello, './test_hello.yaml')
+print('Pipeline Created!')
