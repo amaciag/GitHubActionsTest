@@ -24,7 +24,7 @@ print('job is running')
     name='test-hello'
 )
 def test_hello(image='gcr.io/dbce-dswb-sbx-e07f/test_image:1.0.0',
-               name=None):
+               name='there'):
     hello = dsl.ContainerOp(name='hello',
                             image=image,
                             command=['python', 'greeting.py'],
